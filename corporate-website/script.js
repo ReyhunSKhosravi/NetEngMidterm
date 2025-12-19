@@ -319,6 +319,22 @@ if (aboutContent) {
     fadeInObserver.observe(aboutContent);
 }
 
+// Apply fade-in animation to team members
+document.querySelectorAll('.team-member').forEach((member, index) => {
+    member.style.opacity = '0';
+    member.style.transform = 'translateY(30px)';
+    member.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+    fadeInObserver.observe(member);
+});
+
+// Apply fade-in animation to testimonial cards
+document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.8s ease ${index * 0.15}s, transform 0.8s ease ${index * 0.15}s`;
+    fadeInObserver.observe(card);
+});
+
 // Keyboard Navigation Enhancement
 document.addEventListener('keydown', (e) => {
     // ESC key closes mobile menu
