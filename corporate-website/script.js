@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Search Validation
+// Search Validation (for other pages)
 function validateSearch(event) {
     if (event) {
         event.preventDefault();
@@ -42,7 +42,7 @@ function validateSearch(event) {
     
     const input = document.getElementById("searchInput");
     const error = document.getElementById("searchError");
-    
+
     if (!input || !error) return;
     
     const searchValue = input.value.trim();
@@ -60,11 +60,266 @@ function validateSearch(event) {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        // Simulate search (in real app, this would make an API call)
-        alert(`جستجو برای: "${searchValue}"\n\n(این یک نمونه نمایشی است)`);
+        // Redirect to home page for full search
+        window.location.href = `index.html?search=${encodeURIComponent(searchValue)}`;
         return true;
     }
 }
+
+// Search Data - محتوای قابل جستجو
+const searchableContent = [
+    {
+        id: 'hero',
+        title: 'راهکارهای دیجیتال',
+        content: 'راهکارهای دیجیتال برای رشد کسب‌وکار شما. ما در نوآوران آینده با ارائه خدمات حرفه‌ای طراحی و توسعه نرم‌افزار، به کسب‌وکارها کمک می‌کنیم تا هوشمندانه رشد کنند.',
+        section: 'hero',
+        url: '#hero'
+    },
+    {
+        id: 'about',
+        title: 'درباره شرکت',
+        content: 'شرکت نوآوران آینده یک شرکت پیشرو در ارائه خدمات دیجیتال است که از سال ۲۰۱۰ فعالیت خود را آغاز کرده است. ما در زمینه طراحی وب‌سایت، توسعه نرم‌افزارهای اختصاصی، طراحی اپلیکیشن‌های موبایل و مشاوره فناوری اطلاعات به کسب‌وکارهای مختلف خدمت می‌کنیم.',
+        section: 'about-preview',
+        url: '#about'
+    },
+    {
+        id: 'services',
+        title: 'خدمات ما',
+        content: 'طراحی وب‌سایت، توسعه اپلیکیشن موبایل، توسعه نرم‌افزار، مشاوره فناوری، سئو و بهینه‌سازی، پشتیبانی و نگهداری. راهکارهای جامع برای نیازهای دیجیتال شما.',
+        section: 'services',
+        url: '#services'
+    },
+    {
+        id: 'web-design',
+        title: 'طراحی وب‌سایت',
+        content: 'طراحی وب‌سایت‌های مدرن، ریسپانسیو و مطابق با استانداردهای روز دنیا. بهینه‌سازی برای موتورهای جستجو، سرعت بالا و عملکرد بهینه.',
+        section: 'services',
+        url: 'services.html#web-design'
+    },
+    {
+        id: 'mobile-app',
+        title: 'توسعه اپلیکیشن موبایل',
+        content: 'توسعه اپلیکیشن‌های iOS و Android با بهترین تجربه کاربری. طراحی رابط کاربری زیبا و کاربرپسند، بهینه‌سازی عملکرد و مصرف باتری.',
+        section: 'services',
+        url: 'services.html#mobile-app'
+    },
+    {
+        id: 'software-dev',
+        title: 'توسعه نرم‌افزار',
+        content: 'پیاده‌سازی نرم‌افزارهای اختصاصی بر اساس نیازهای کسب‌وکار شما. سیستم‌های مدیریت محتوا، نرم‌افزارهای سازمانی، سیستم‌های مدیریت ارتباط با مشتری.',
+        section: 'services',
+        url: 'services.html#software-dev'
+    },
+    {
+        id: 'consulting',
+        title: 'مشاوره فناوری',
+        content: 'ارائه راهکارهای هوشمند برای بهینه‌سازی فرآیندهای دیجیتال. مشاوره استراتژیک فناوری اطلاعات، بررسی و تحلیل نیازهای کسب‌وکار.',
+        section: 'services',
+        url: 'services.html#consulting'
+    },
+    {
+        id: 'team',
+        title: 'تیم ما',
+        content: 'ریحانه السادات خسروی - طراح محصول و تجربه‌ی رابطه کاربری. سیدمحمدعلی امامی‌زاده - برنامه‌نویس و توسعه دهنده بک-اند. متخصصان با تجربه و متعهد.',
+        section: 'team',
+        url: '#team'
+    },
+    {
+        id: 'testimonials',
+        title: 'نظرات مشتریان',
+        content: 'نظرات و تجربیات مشتریان ما درباره خدمات شرکت نوآوران آینده. رضایت مشتریان از کیفیت خدمات و پشتیبانی.',
+        section: 'testimonials',
+        url: '#testimonials'
+    },
+    {
+        id: 'contact',
+        title: 'تماس با ما',
+        content: 'تهران، میدان ونک، خیابان ملاصدرا. تلفن: ۰۲۱-۸۸۸۸۸۸۸۸. ایمیل: info@novaran-ayandeh.ir. ما آماده پاسخگویی به سوالات شما هستیم.',
+        section: 'contact',
+        url: '#contact'
+    }
+];
+
+// Search Function - جستجوی کامل
+function performSearch(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    
+    const input = document.getElementById("searchInput");
+    const error = document.getElementById("searchError");
+    const resultsContainer = document.getElementById("searchResults");
+    
+    if (!input || !error || !resultsContainer) return;
+    
+    const searchValue = input.value.trim();
+    
+    // اعتبارسنجی
+    if (searchValue === "") {
+        error.textContent = "لطفاً عبارت جستجو را وارد کنید.";
+        error.style.display = "block";
+        resultsContainer.innerHTML = "";
+        resultsContainer.style.display = "none";
+        input.focus();
+        return false;
+    } else if (searchValue.length < 2) {
+        error.textContent = "عبارت جستجو باید حداقل ۲ کاراکتر باشد.";
+        error.style.display = "block";
+        resultsContainer.innerHTML = "";
+        resultsContainer.style.display = "none";
+        input.focus();
+        return false;
+    }
+    
+    // پاک کردن خطا
+    error.textContent = "";
+    error.style.display = "none";
+    
+    // جستجو در محتوا
+    const searchTerm = searchValue.toLowerCase();
+    const results = searchableContent.filter(item => {
+        const titleMatch = item.title.toLowerCase().includes(searchTerm);
+        const contentMatch = item.content.toLowerCase().includes(searchTerm);
+        return titleMatch || contentMatch;
+    });
+    
+    // نمایش نتایج
+    if (results.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="search-result-item no-results">
+                <p>نتیجه‌ای یافت نشد. لطفاً عبارت دیگری را امتحان کنید.</p>
+            </div>
+        `;
+        resultsContainer.style.display = "block";
+    } else {
+        let resultsHTML = `<div class="search-results-header">${results.length} نتیجه یافت شد:</div>`;
+        
+        results.forEach((result, index) => {
+            // Highlight کردن کلمه جستجو شده
+            const highlightedTitle = highlightText(result.title, searchValue);
+            const highlightedContent = highlightText(result.content.substring(0, 150) + '...', searchValue);
+            
+            resultsHTML += `
+                <div class="search-result-item" onclick="goToResult('${result.url}', '${result.section}')">
+                    <h4>${highlightedTitle}</h4>
+                    <p>${highlightedContent}</p>
+                    <span class="search-result-link">مشاهده بیشتر →</span>
+                </div>
+            `;
+        });
+        
+        resultsContainer.innerHTML = resultsHTML;
+        resultsContainer.style.display = "block";
+    }
+    
+    return true;
+}
+
+// Highlight کردن متن
+function highlightText(text, searchTerm) {
+    if (!searchTerm) return text;
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+// رفتن به نتیجه جستجو
+function goToResult(url, sectionId) {
+    const resultsContainer = document.getElementById("searchResults");
+    if (resultsContainer) {
+        resultsContainer.style.display = "none";
+    }
+    
+    // اگر لینک داخلی است
+    if (url.startsWith('#')) {
+        const targetElement = document.querySelector(url);
+        if (targetElement) {
+            const headerOffset = 150;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Highlight کردن بخش
+            highlightSection(sectionId);
+        }
+    } else {
+        // اگر لینک به صفحه دیگر است
+        window.location.href = url;
+    }
+    
+    // پاک کردن جعبه جستجو
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.value = "";
+    }
+}
+
+// Highlight کردن بخش
+function highlightSection(sectionId) {
+    const section = document.querySelector(`.${sectionId}`);
+    if (section) {
+        section.style.transition = 'background-color 0.3s ease';
+        section.style.backgroundColor = 'rgba(37, 99, 235, 0.1)';
+        
+        setTimeout(() => {
+            section.style.backgroundColor = '';
+        }, 2000);
+    }
+}
+
+// جستجوی Real-time هنگام تایپ
+const searchInput = document.getElementById("searchInput");
+if (searchInput) {
+    let searchTimeout;
+    
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        const value = this.value.trim();
+        
+        if (value.length >= 2) {
+            searchTimeout = setTimeout(() => {
+                performSearch(null);
+            }, 300);
+        } else {
+            const resultsContainer = document.getElementById("searchResults");
+            const error = document.getElementById("searchError");
+            if (resultsContainer) {
+                resultsContainer.style.display = "none";
+            }
+            if (error) {
+                error.textContent = "";
+                error.style.display = "none";
+            }
+        }
+    });
+    
+    // بستن نتایج با کلیک خارج
+    document.addEventListener('click', function(e) {
+        const searchBar = document.querySelector('.search-bar');
+        const resultsContainer = document.getElementById("searchResults");
+        
+        if (searchBar && resultsContainer && !searchBar.contains(e.target)) {
+            resultsContainer.style.display = "none";
+        }
+    });
+}
+
+// جستجوی خودکار از URL parameter
+window.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    
+    if (searchParam && searchInput) {
+        searchInput.value = decodeURIComponent(searchParam);
+        // کمی تاخیر برای اطمینان از لود شدن کامل صفحه
+        setTimeout(() => {
+            performSearch(null);
+        }, 500);
+    }
+});
 
 // Animated Counter for Stats
 function animateCounter(element, target, duration = 2000) {
@@ -114,8 +369,8 @@ const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
+    e.preventDefault();
+
         let isValid = true;
         
         // Get form elements

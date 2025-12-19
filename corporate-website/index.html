@@ -35,8 +35,8 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <div class="container">
-                <form class="search-form" onsubmit="validateSearch(event)">
-                    <input type="text" id="searchInput" placeholder="جستجو در وب‌سایت..." />
+                <form class="search-form" onsubmit="performSearch(event)">
+                    <input type="text" id="searchInput" placeholder="جستجو در وب‌سایت..." autocomplete="off" />
                     <button type="submit" aria-label="جستجو">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -45,12 +45,14 @@
                     </button>
                 </form>
             <p class="error" id="searchError"></p>
+                <!-- Search Results -->
+                <div class="search-results" id="searchResults"></div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h2 class="hero-title">راهکارهای دیجیتال برای رشد کسب‌وکار شما</h2>
@@ -62,9 +64,6 @@
                 <a href="services.html" class="btn btn-primary">مشاهده خدمات</a>
                 <a href="#contact" class="btn btn-secondary">تماس با ما</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
         </div>
     </section>
 
@@ -93,7 +92,7 @@
     </section>
 
     <!-- Company Overview -->
-    <section class="about-preview">
+    <section class="about-preview" id="about">
         <div class="container">
             <div class="section-header">
                 <h3 class="section-title">درباره شرکت</h3>
@@ -113,20 +112,14 @@
                     <a href="about.html" class="btn btn-outline">بیشتر بدانید</a>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder">
-                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <path d="M21 15l-5-5L5 21"></path>
-                        </svg>
-                    </div>
+                    <img src="company-image.png" alt="شرکت نوآوران آینده" class="company-image" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="section-header">
                 <h3 class="section-title">خدمات ما</h3>
@@ -212,7 +205,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section class="team" id="team">
         <div class="container">
             <div class="section-header">
                 <h3 class="section-title">تیم ما</h3>
@@ -229,11 +222,12 @@
                         </div>
                     </div>
                     <div class="team-member-info">
-                        <h4>علی رضایی</h4>
-                        <p class="team-role">مدیر فنی و بنیان‌گذار</p>
+                        <h4>ریحانه السادات خسروی</h4>
+                        <p class="team-role">طراح محصول و تجربه‌ی رابطه کاربری</p>
                         <p class="team-bio">
-                            با بیش از ۱۵ سال تجربه در زمینه توسعه نرم‌افزار و مدیریت پروژه‌های بزرگ،
-                            علی رهبری تیم فنی را بر عهده دارد و در طراحی معماری سیستم‌های پیچیده تخصص دارد.
+                            متخصص در طراحی محصول و تجربه کاربری، ریحانه با خلاقیت و دقت
+                            در جزئیات، محصولات دیجیتال زیبا و کاربرپسندی خلق می‌کند و به دنبال
+                            ایجاد تجربه‌های کاربری بهینه و مؤثر است.
                         </p>
                     </div>
                 </div>
@@ -247,11 +241,12 @@
                         </div>
                     </div>
                     <div class="team-member-info">
-                        <h4>سارا محمدی</h4>
-                        <p class="team-role">طراح رابط کاربری و تجربه کاربری</p>
+                        <h4>سیدمحمدعلی امامی‌زاده</h4>
+                        <p class="team-role">برنامه‌نویس و توسعه دهنده بک-اند</p>
                         <p class="team-bio">
-                            متخصص در طراحی رابط کاربری مدرن و تجربه کاربری، سارا با خلاقیت و دقت
-                            در جزئیات، محصولات دیجیتال زیبا و کاربرپسندی خلق می‌کند.
+                            متخصص در توسعه بک-اند و برنامه‌نویسی، محمدعلی با تجربه و تخصص خود
+                            در طراحی و پیاده‌سازی سیستم‌های قدرتمند و مقیاس‌پذیر، زیرساخت‌های
+                            فنی قابل اعتمادی برای پروژه‌ها ایجاد می‌کند.
                         </p>
                     </div>
                 </div>
@@ -260,7 +255,7 @@
     </section>
 
     <!-- Customer Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <h3 class="section-title">نظرات مشتریان</h3>
