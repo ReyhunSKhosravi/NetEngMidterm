@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="شرکت نوآوران آینده - ارائه خدمات طراحی وب، توسعه نرم‌افزار و مشاوره فناوری" />
+    <title>شرکت نوآوران آینده | راهکارهای دیجیتال برای کسب‌وکار شما</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo-container">
+            <h1 class="logo">نوآوران آینده</h1>
+                <span class="logo-subtitle">شرکت فناوری اطلاعات</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منوی موبایل">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="services.html">خدمات</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <form class="search-form" onsubmit="validateSearch(event)">
+                    <input type="text" id="searchInput" placeholder="جستجو در وب‌سایت..." />
+                    <button type="submit" aria-label="جستجو">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </form>
+            <p class="error" id="searchError"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">راهکارهای دیجیتال برای رشد کسب‌وکار شما</h2>
+            <p class="hero-description">
+                ما در نوآوران آینده با ارائه خدمات حرفه‌ای طراحی و توسعه نرم‌افزار،
+                به کسب‌وکارها کمک می‌کنیم تا هوشمندانه رشد کنند و در دنیای دیجیتال موفق باشند.
+            </p>
+            <div class="hero-buttons">
+                <a href="services.html" class="btn btn-primary">مشاهده خدمات</a>
+                <a href="#contact" class="btn btn-secondary">تماس با ما</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">پروژه موفق</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">مشتری راضی</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">سال تجربه</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">تیم متخصص</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">درباره شرکت</h3>
+                <p class="section-subtitle">ما که هستیم و چه می‌کنیم</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        شرکت نوآوران آینده یک شرکت پیشرو در ارائه خدمات دیجیتال است که از سال ۲۰۱۰ فعالیت خود را آغاز کرده است.
+                        ما در زمینه طراحی وب‌سایت، توسعه نرم‌افزارهای اختصاصی، طراحی اپلیکیشن‌های موبایل و مشاوره فناوری اطلاعات
+                        به کسب‌وکارهای مختلف خدمت می‌کنیم.
+                    </p>
+                    <p>
+                        تیم ما متشکل از متخصصان با تجربه در حوزه‌های مختلف فناوری است که با استفاده از آخرین تکنولوژی‌ها و
+                        استانداردهای روز دنیا، راهکارهای نوآورانه و کارآمدی را برای مشتریان خود ارائه می‌دهند.
+                    </p>
+                    <a href="about.html" class="btn btn-outline">بیشتر بدانید</a>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <path d="M21 15l-5-5L5 21"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">خدمات ما</h3>
+                <p class="section-subtitle">راهکارهای جامع برای نیازهای دیجیتال شما</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h4>طراحی وب‌سایت</h4>
+                    <p>طراحی وب‌سایت‌های مدرن، ریسپانسیو و مطابق با استانداردهای روز دنیا</p>
+                    <a href="services.html#web-design" class="service-link">بیشتر بدانید →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                            <line x1="12" y1="18" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h4>توسعه اپلیکیشن موبایل</h4>
+                    <p>توسعه اپلیکیشن‌های iOS و Android با بهترین تجربه کاربری</p>
+                    <a href="services.html#mobile-app" class="service-link">بیشتر بدانید →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h4>توسعه نرم‌افزار</h4>
+                    <p>پیاده‌سازی نرم‌افزارهای اختصاصی بر اساس نیازهای کسب‌وکار شما</p>
+                    <a href="services.html#software-dev" class="service-link">بیشتر بدانید →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h4>مشاوره فناوری</h4>
+                    <p>ارائه راهکارهای هوشمند برای بهینه‌سازی فرآیندهای دیجیتال</p>
+                    <a href="services.html#consulting" class="service-link">بیشتر بدانید →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h4>سئو و بهینه‌سازی</h4>
+                    <p>بهینه‌سازی وب‌سایت برای موتورهای جستجو و افزایش ترافیک</p>
+                    <a href="services.html#seo" class="service-link">بیشتر بدانید →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>پشتیبانی و نگهداری</h4>
+                    <p>پشتیبانی ۲۴/۷ و نگهداری منظم سیستم‌های شما</p>
+                    <a href="services.html#support" class="service-link">بیشتر بدانید →</a>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="services.html" class="btn btn-primary">مشاهده تمام خدمات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">تماس با ما</h3>
+                <p class="section-subtitle">ما آماده پاسخگویی به سوالات شما هستیم</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>آدرس</h4>
+                            <p>تهران، میدان ونک، خیابان ملاصدرا، پلاک ۱۲۳</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>تلفن</h4>
+                            <p>۰۲۱-۸۸۸۸۸۸۸۸</p>
+                            <p>۰۹۱۲-۳۴۵۶۷۸۹</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>ایمیل</h4>
+                            <p>info@novaran-ayandeh.ir</p>
+                            <p>support@novaran-ayandeh.ir</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="نام و نام خانوادگی *" required />
+                <p class="error" id="nameError"></p>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="ایمیل *" required />
+                <p class="error" id="emailError"></p>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="شماره تماس" />
+                        <p class="error" id="phoneError"></p>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="پیام شما *" required></textarea>
+                <p class="error" id="messageError"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">ارسال پیام</button>
+                    <div class="form-success" id="formSuccess"></div>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>نوآوران آینده</h4>
+                    <p>شرکت پیشرو در ارائه خدمات دیجیتال و فناوری اطلاعات</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="اینستاگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لینکدین">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="تلگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.05 2.05L2.05 10.55c-.9.38-.9 1.7 0 2.08l5.3 2.05 2.35 7.5c.2.65.95.95 1.55.55l3.3-2.5 6.3 4.8c.7.5 1.7.15 1.95-.7l4.5-20.5c.25-1.05-.6-1.9-1.65-1.65z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>لینک‌های سریع</h4>
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="services.html">خدمات</a></li>
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمات</h4>
+                    <ul>
+                        <li><a href="services.html#web-design">طراحی وب‌سایت</a></li>
+                        <li><a href="services.html#mobile-app">اپلیکیشن موبایل</a></li>
+                        <li><a href="services.html#software-dev">توسعه نرم‌افزار</a></li>
+                        <li><a href="services.html#consulting">مشاوره فناوری</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تماس</h4>
+                    <ul>
+                        <li>تهران، میدان ونک</li>
+                        <li>۰۲۱-۸۸۸۸۸۸۸۸</li>
+                        <li>info@novaran-ayandeh.ir</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۴ - شرکت نوآوران آینده | تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="بازگشت به بالا">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="درباره شرکت نوآوران آینده - تاریخچه، ماموریت و تیم ما" />
+    <title>درباره ما | شرکت نوآوران آینده</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <h1 class="logo">نوآوران آینده</h1>
+                <span class="logo-subtitle">شرکت فناوری اطلاعات</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منوی موبایل">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html" class="active">درباره ما</a></li>
+                    <li><a href="services.html">خدمات</a></li>
+                    <li><a href="index.html#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <form class="search-form" onsubmit="validateSearch(event)">
+                    <input type="text" id="searchInput" placeholder="جستجو در وب‌سایت..." />
+                    <button type="submit" aria-label="جستجو">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </form>
+                <p class="error" id="searchError"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 100px 0 60px;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">درباره ما</h2>
+            <p class="hero-description">
+                شناخت بهتر شرکت نوآوران آینده و ارزش‌های ما
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="about-preview" style="padding: 5rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">داستان ما</h3>
+                <p class="section-subtitle">از آغاز تا امروز</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        شرکت نوآوران آینده در سال ۱۳۸۹ با هدف ارائه راهکارهای نوآورانه در حوزه فناوری اطلاعات تأسیس شد.
+                        ما باور داریم که فناوری باید در خدمت رشد و توسعه کسب‌وکارها باشد و به همین دلیل،
+                        همواره تلاش کرده‌ایم تا با استفاده از آخرین تکنولوژی‌ها و استانداردهای روز دنیا،
+                        راهکارهای کارآمد و مقرون به صرفه‌ای را برای مشتریان خود ارائه دهیم.
+                    </p>
+                    <p>
+                        در طول این سال‌ها، ما با بیش از ۵۰۰ شرکت و سازمان همکاری داشته‌ایم و پروژه‌های موفق
+                        متعددی را در زمینه‌های مختلف به انجام رسانده‌ایم. تیم ما متشکل از متخصصان با تجربه
+                        و خلاق است که همواره در حال یادگیری و به‌روزرسانی دانش خود هستند.
+                    </p>
+                    <p>
+                        ما به کیفیت، نوآوری و رضایت مشتری متعهد هستیم و این ارزش‌ها در تمامی پروژه‌های ما
+                        مشهود است. هدف ما این است که با ارائه خدمات حرفه‌ای و پشتیبانی مستمر،
+                        به شرکای تجاری خود کمک کنیم تا در دنیای دیجیتال موفق باشند.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="services" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="service-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h4>ماموریت ما</h4>
+                    <p>
+                        ارائه راهکارهای دیجیتال نوآورانه و کارآمد که به کسب‌وکارها کمک می‌کند
+                        تا در دنیای امروز رقابتی باقی بمانند و رشد کنند. ما متعهد به ارائه
+                        خدمات با کیفیت و پشتیبانی مستمر هستیم.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h4>چشم‌انداز ما</h4>
+                    <p>
+                        تبدیل شدن به یکی از پیشروترین شرکت‌های فناوری اطلاعات در منطقه و
+                        ارائه راهکارهای دیجیتال که تأثیر مثبت و ماندگاری بر کسب‌وکارها و جامعه داشته باشد.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>ارزش‌های ما</h4>
+                    <p>
+                        کیفیت، نوآوری، صداقت، تعهد و رضایت مشتری از اصلی‌ترین ارزش‌های ما هستند.
+                        ما به این ارزش‌ها پایبند هستیم و آنها را در تمامی تعاملات و پروژه‌های خود رعایت می‌کنیم.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">تیم ما</h3>
+                <p class="section-subtitle">متخصصان با تجربه و خلاق</p>
+            </div>
+            <div class="service-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="service-card">
+                    <div class="service-icon" style="width: 80px; height: 80px; margin: 0 auto 1rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>تیم توسعه</h4>
+                    <p>
+                        متشکل از برنامه‌نویسان حرفه‌ای و با تجربه در زمینه‌های مختلف
+                        توسعه نرم‌افزار و وب
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="width: 80px; height: 80px; margin: 0 auto 1rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h4>تیم طراحی</h4>
+                    <p>
+                        طراحان خلاق و با ذوق که به دنبال ایجاد تجربه‌های کاربری
+                        زیبا و کارآمد هستند
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="width: 80px; height: 80px; margin: 0 auto 1rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h4>تیم مشاوره</h4>
+                    <p>
+                        مشاوران متخصص که راهکارهای استراتژیک و عملیاتی
+                        برای رشد کسب‌وکار ارائه می‌دهند
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="width: 80px; height: 80px; margin: 0 auto 1rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h4>پشتیبانی</h4>
+                    <p>
+                        تیم پشتیبانی ۲۴/۷ که همیشه آماده پاسخگویی
+                        و حل مشکلات مشتریان هستند
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">چرا ما را انتخاب کنید؟</h3>
+                <p class="section-subtitle">مزایای همکاری با نوآوران آینده</p>
+            </div>
+            <div class="service-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="service-card">
+                    <h4>تجربه و تخصص</h4>
+                    <p>بیش از ۱۵ سال تجربه در زمینه فناوری اطلاعات و پروژه‌های موفق متعدد</p>
+                </div>
+                <div class="service-card">
+                    <h4>کیفیت بالا</h4>
+                    <p>استفاده از بهترین تکنولوژی‌ها و استانداردهای روز دنیا در تمامی پروژه‌ها</p>
+                </div>
+                <div class="service-card">
+                    <h4>پشتیبانی مستمر</h4>
+                    <p>پشتیبانی ۲۴/۷ و نگهداری منظم سیستم‌ها برای اطمینان از عملکرد بهینه</p>
+                </div>
+                <div class="service-card">
+                    <h4>قیمت مناسب</h4>
+                    <p>ارائه خدمات با کیفیت در قبال قیمت‌های منصفانه و رقابتی</p>
+                </div>
+                <div class="service-card">
+                    <h4>تحویل به موقع</h4>
+                    <p>تعهد به تحویل پروژه‌ها در زمان مقرر و طبق برنامه‌ریزی انجام شده</p>
+                </div>
+                <div class="service-card">
+                    <h4>رضایت مشتری</h4>
+                    <p>رضایت مشتری اولویت اول ماست و تمام تلاش خود را برای دستیابی به آن می‌کنیم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <h3 class="section-title" style="color: white; margin-bottom: 1rem;">آماده شروع همکاری هستید؟</h3>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">
+                با ما تماس بگیرید تا در مورد پروژه شما صحبت کنیم
+            </p>
+            <a href="index.html#contact" class="btn btn-secondary">تماس با ما</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>نوآوران آینده</h4>
+                    <p>شرکت پیشرو در ارائه خدمات دیجیتال و فناوری اطلاعات</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="اینستاگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لینکدین">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="تلگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.05 2.05L2.05 10.55c-.9.38-.9 1.7 0 2.08l5.3 2.05 2.35 7.5c.2.65.95.95 1.55.55l3.3-2.5 6.3 4.8c.7.5 1.7.15 1.95-.7l4.5-20.5c.25-1.05-.6-1.9-1.65-1.65z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>لینک‌های سریع</h4>
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="services.html">خدمات</a></li>
+                        <li><a href="index.html#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمات</h4>
+                    <ul>
+                        <li><a href="services.html#web-design">طراحی وب‌سایت</a></li>
+                        <li><a href="services.html#mobile-app">اپلیکیشن موبایل</a></li>
+                        <li><a href="services.html#software-dev">توسعه نرم‌افزار</a></li>
+                        <li><a href="services.html#consulting">مشاوره فناوری</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تماس</h4>
+                    <ul>
+                        <li>تهران، میدان ونک</li>
+                        <li>۰۲۱-۸۸۸۸۸۸۸۸</li>
+                        <li>info@novaran-ayandeh.ir</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۴ - شرکت نوآوران آینده | تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="بازگشت به بالا">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

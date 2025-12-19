@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="خدمات شرکت نوآوران آینده - طراحی وب، توسعه اپلیکیشن، مشاوره فناوری و بیشتر" />
+    <title>خدمات | شرکت نوآوران آینده</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <h1 class="logo">نوآوران آینده</h1>
+                <span class="logo-subtitle">شرکت فناوری اطلاعات</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منوی موبایل">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="services.html" class="active">خدمات</a></li>
+                    <li><a href="index.html#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <form class="search-form" onsubmit="validateSearch(event)">
+                    <input type="text" id="searchInput" placeholder="جستجو در وب‌سایت..." />
+                    <button type="submit" aria-label="جستجو">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </form>
+                <p class="error" id="searchError"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 100px 0 60px;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">خدمات ما</h2>
+            <p class="hero-description">
+                راهکارهای جامع دیجیتال برای نیازهای کسب‌وکار شما
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Details -->
+    <section class="services-page">
+        <div class="container">
+            <div class="service-detail" id="web-design">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>طراحی وب‌سایت</h3>
+                        <p class="service-subtitle">وب‌سایت‌های مدرن و حرفه‌ای</p>
+                    </div>
+                </div>
+                <p>
+                    ما وب‌سایت‌های مدرن، ریسپانسیو و مطابق با استانداردهای روز دنیا طراحی می‌کنیم.
+                    هر وب‌سایتی که ما طراحی می‌کنیم، با توجه به نیازهای خاص کسب‌وکار شما و با استفاده
+                    از آخرین تکنولوژی‌های طراحی وب ساخته می‌شود.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>طراحی ریسپانسیو و سازگار با تمام دستگاه‌ها</li>
+                        <li>بهینه‌سازی برای موتورهای جستجو (SEO)</li>
+                        <li>سرعت بالا و عملکرد بهینه</li>
+                        <li>رابط کاربری زیبا و کاربرپسند</li>
+                        <li>امنیت بالا و محافظت از داده‌ها</li>
+                        <li>پشتیبانی و نگهداری مستمر</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail" id="mobile-app">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                            <line x1="12" y1="18" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>توسعه اپلیکیشن موبایل</h3>
+                        <p class="service-subtitle">اپلیکیشن‌های iOS و Android</p>
+                    </div>
+                </div>
+                <p>
+                    ما اپلیکیشن‌های موبایل حرفه‌ای برای پلتفرم‌های iOS و Android توسعه می‌دهیم.
+                    اپلیکیشن‌های ما با بهترین تجربه کاربری و عملکرد بهینه طراحی و پیاده‌سازی می‌شوند.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>توسعه اپلیکیشن‌های Native و Cross-Platform</li>
+                        <li>طراحی رابط کاربری زیبا و کاربرپسند</li>
+                        <li>بهینه‌سازی عملکرد و مصرف باتری</li>
+                        <li>امنیت بالا و محافظت از داده‌های کاربر</li>
+                        <li>یکپارچه‌سازی با سیستم‌های Backend</li>
+                        <li>انتشار در اپ استورها و پشتیبانی مستمر</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail" id="software-dev">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>توسعه نرم‌افزار</h3>
+                        <p class="service-subtitle">نرم‌افزارهای اختصاصی</p>
+                    </div>
+                </div>
+                <p>
+                    ما نرم‌افزارهای اختصاصی بر اساس نیازهای خاص کسب‌وکار شما توسعه می‌دهیم.
+                    از سیستم‌های مدیریت محتوا گرفته تا نرم‌افزارهای پیچیده سازمانی،
+                    ما راهکارهای مناسبی برای شما ارائه می‌دهیم.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>توسعه نرم‌افزارهای اختصاصی</li>
+                        <li>سیستم‌های مدیریت محتوا (CMS)</li>
+                        <li>نرم‌افزارهای سازمانی (ERP)</li>
+                        <li>سیستم‌های مدیریت ارتباط با مشتری (CRM)</li>
+                        <li>API و یکپارچه‌سازی سیستم‌ها</li>
+                        <li>مستندسازی کامل و آموزش کاربران</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail" id="consulting">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>مشاوره فناوری</h3>
+                        <p class="service-subtitle">راهکارهای استراتژیک</p>
+                    </div>
+                </div>
+                <p>
+                    ما راهکارهای هوشمند برای بهینه‌سازی فرآیندهای دیجیتال و استفاده بهینه از فناوری
+                    در کسب‌وکار شما ارائه می‌دهیم. مشاوران ما با تجربه و تخصص خود،
+                    شما را در مسیر دیجیتالی‌سازی راهنمایی می‌کنند.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>مشاوره استراتژیک فناوری اطلاعات</li>
+                        <li>بررسی و تحلیل نیازهای کسب‌وکار</li>
+                        <li>ارائه راهکارهای بهینه‌سازی</li>
+                        <li>مشاوره در انتخاب تکنولوژی مناسب</li>
+                        <li>برنامه‌ریزی و مدیریت پروژه</li>
+                        <li>آموزش و انتقال دانش</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail" id="seo">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>سئو و بهینه‌سازی</h3>
+                        <p class="service-subtitle">افزایش رتبه در موتورهای جستجو</p>
+                    </div>
+                </div>
+                <p>
+                    ما وب‌سایت شما را برای موتورهای جستجو بهینه می‌کنیم تا رتبه بهتری در نتایج جستجو
+                    کسب کنید و ترافیک بیشتری به وب‌سایت خود جذب کنید.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>بهینه‌سازی On-Page و Off-Page</li>
+                        <li>تحلیل کلمات کلیدی</li>
+                        <li>بهینه‌سازی محتوا</li>
+                        <li>ساخت بک‌لینک‌های معتبر</li>
+                        <li>گزارش‌دهی و تحلیل عملکرد</li>
+                        <li>بهینه‌سازی سرعت و عملکرد سایت</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail" id="support">
+                <div class="service-detail-header">
+                    <div class="service-icon" style="width: 64px; height: 64px; margin-left: 1.5rem;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>پشتیبانی و نگهداری</h3>
+                        <p class="service-subtitle">پشتیبانی ۲۴/۷</p>
+                    </div>
+                </div>
+                <p>
+                    ما پشتیبانی و نگهداری مستمر از تمام سیستم‌ها و وب‌سایت‌هایی که طراحی و توسعه می‌دهیم
+                    ارائه می‌کنیم. تیم پشتیبانی ما همیشه آماده پاسخگویی و حل مشکلات شماست.
+                </p>
+                <div class="service-features">
+                    <h4>ویژگی‌های خدمات ما:</h4>
+                    <ul>
+                        <li>پشتیبانی ۲۴ ساعته و ۷ روز هفته</li>
+                        <li>نگهداری و به‌روزرسانی منظم</li>
+                        <li>پشتیبان‌گیری منظم از داده‌ها</li>
+                        <li>نظارت بر عملکرد سیستم‌ها</li>
+                        <li>حل سریع مشکلات و باگ‌ها</li>
+                        <li>گزارش‌دهی منظم عملکرد</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 2rem;">آماده شروع پروژه خود هستید؟</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; font-size: 1.125rem;">
+                    با ما تماس بگیرید تا در مورد نیازهای شما صحبت کنیم
+                </p>
+                <a href="index.html#contact" class="btn btn-secondary">تماس با ما</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>نوآوران آینده</h4>
+                    <p>شرکت پیشرو در ارائه خدمات دیجیتال و فناوری اطلاعات</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="اینستاگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لینکدین">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="تلگرام">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.05 2.05L2.05 10.55c-.9.38-.9 1.7 0 2.08l5.3 2.05 2.35 7.5c.2.65.95.95 1.55.55l3.3-2.5 6.3 4.8c.7.5 1.7.15 1.95-.7l4.5-20.5c.25-1.05-.6-1.9-1.65-1.65z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>لینک‌های سریع</h4>
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="services.html">خدمات</a></li>
+                        <li><a href="index.html#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمات</h4>
+                    <ul>
+                        <li><a href="services.html#web-design">طراحی وب‌سایت</a></li>
+                        <li><a href="services.html#mobile-app">اپلیکیشن موبایل</a></li>
+                        <li><a href="services.html#software-dev">توسعه نرم‌افزار</a></li>
+                        <li><a href="services.html#consulting">مشاوره فناوری</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تماس</h4>
+                    <ul>
+                        <li>تهران، میدان ونک</li>
+                        <li>۰۲۱-۸۸۸۸۸۸۸۸</li>
+                        <li>info@novaran-ayandeh.ir</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۴ - شرکت نوآوران آینده | تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="بازگشت به بالا">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
